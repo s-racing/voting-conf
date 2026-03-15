@@ -1,0 +1,23 @@
+namespace: voting
+
+backend:
+  image: 244170403840.dkr.ecr.us-east-1.amazonaws.com/backend-be:latest
+  replicas: 1
+  port: 5000
+
+frontend:
+  image: 244170403840.dkr.ecr.us-east-1.amazonaws.com/frontend-fe:latest
+  replicas: 1
+  port: 80
+  backendUrl: ""
+
+postgres:
+  image: postgres:15
+  replicas: 1
+  port: 5432
+  storage: 1Gi
+
+db:
+  name: votingdb
+  user: postgres
+  password: postgres123

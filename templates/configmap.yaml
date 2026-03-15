@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: backend-config
+  namespace: {{ .Values.namespace }}
+data:
+  PORT: "{{ .Values.backend.port }}"
+  DB_HOST: "postgres"
+  DB_PORT: "{{ .Values.postgres.port }}"
+  DB_NAME: "{{ .Values.db.name }}"
+  DB_USER: "{{ .Values.db.user }}"
+  BACKEND_URL: ""
